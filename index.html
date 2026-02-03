@@ -144,6 +144,26 @@
                 font-size: 0.9rem;
             }
         }
+        /* Animación de entrada para secciones */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto Hover en tarjetas */
+.data-highlight {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.data-highlight:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
     </style>
   <base target="_blank">
 </head>
@@ -151,9 +171,12 @@
   <body class="bg-background text-gray-800 inter overflow-x-hidden">
 
     <!-- Toggle button for mobile -->
-    <button id="tocToggle" class="toc-toggle lg:hidden">
-      <i class="fas fa-bars"></i>
-    </button>
+   <button id="tocToggle" class="toc-toggle">
+  <i class="fas fa-bars"></i>
+</button>
+
+<nav id="tocNav" class="toc-fixed">
+  </nav>
 
     <!-- Table of Contents -->
     <nav id="tocNav" class="toc-fixed">
@@ -194,9 +217,11 @@
 
       <!-- Hero Section -->
       <section class="min-h-screen bg-gradient-to-br from-slate-900 via-primary to-secondary text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-          <img src="https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/d2fa535304b9e4109d9eda453382f68a2d2475db.jpg" alt="Vista aérea de La Paz, Bolivia" class="w-full h-full object-cover" size="wallpaper" aspect="wide" style="photo" query="La Paz Bolivia aerial view" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
-        </div>
+        <div class="absolute inset-0 opacity-20">
+  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000" 
+       alt="Análisis Económico" 
+       class="w-full h-full object-cover"/>
+</div>
         <div class="relative z-10 container mx-auto px-6 py-16">
           <div class="hero-grid max-w-7xl">
             <h1 class="hero-title canela font-light italic leading-tight">
@@ -1617,12 +1642,12 @@
         const mainContent = document.getElementById('mainContent');
         
         function toggleToc() {
-            const isOpen = tocNav.classList.toggle('toc-open');
-            mainContent.classList.toggle('shifted', isOpen);
-            tocToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        }
-        
-        tocToggle.addEventListener('click', toggleToc);
+    const isOpen = tocNav.classList.toggle('toc-open');
+    mainContent.classList.toggle('shifted', isOpen);
+    tocToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+}
+
+tocToggle.addEventListener('click', toggleToc);
         
         // Close TOC when clicking outside
         document.addEventListener('click', function(event) {
@@ -1697,5 +1722,6 @@
         highlightActiveSection(); // Initial call
     </script>
   
+
 
 </body></html>
