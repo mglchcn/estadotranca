@@ -48,7 +48,7 @@
         .hero-content { grid-column: 1; }
         .hero-visual { grid-column: 2; grid-row: 2; }
 
-        /* Menú Lateral Mejorado */
+        /* --- MEJORA: Menú Lateral Controlable --- */
         .toc-fixed {
             position: fixed;
             top: 0;
@@ -59,7 +59,7 @@
             color: white;
             overflow-y: auto;
             z-index: 1000;
-            padding: 4rem 1.5rem 2rem 1.5rem; /* Padding top aumentado para el botón */
+            padding: 4rem 1.5rem 2rem 1.5rem;
             transform: translateX(-100%);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 4px 0 15px rgba(0,0,0,0.1);
@@ -75,10 +75,10 @@
             width: 100%;
         }
         .main-content.shifted {
-            margin-left: 280px; /* Se ajustará vía JS para evitar overflow en móviles */
+            margin-left: 280px;
         }
 
-        /* Botón Toggle siempre visible */
+        /* --- MEJORA: Botón siempre visible --- */
         .toc-toggle {
             position: fixed;
             top: 1rem;
@@ -99,7 +99,7 @@
             transform: scale(1.05);
         }
 
-        /* Animaciones Nuevas */
+        /* --- MEJORA: Animaciones --- */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -155,9 +155,9 @@
             .hero-content, .hero-visual {
                 grid-column: 1;
             }
-            /* En móvil, main-content no debe tener margen aunque el menú esté abierto */
+            /* En móvil, el contenido no se empuja, el menú se superpone */
             .main-content.shifted {
-                margin-left: 0;
+                margin-left: 0; 
             }
         }
         @media (max-width: 768px) {
@@ -181,34 +181,16 @@
 
     <nav id="tocNav" class="toc-fixed">
       <h3 class="text-lg font-bold mb-6 text-white canela border-b border-gray-600 pb-2">Índice de Contenidos</h3>
-      <ul class="space-y-3 text-sm">
-        <li>
-          <a href="#executive-summary" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">Resumen Ejecutivo</a>
-        </li>
-        <li>
-          <a href="#marco-conceptual" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">1. Marco Conceptual</a>
-        </li>
-        <li>
-          <a href="#evolucion-historica" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">2. Evolución Histórica</a>
-        </li>
-        <li>
-          <a href="#magnitud-carga" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">3. Magnitud de la Carga</a>
-        </li>
-        <li>
-          <a href="#impacto-sectorial" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">4. Impacto Sectorial</a>
-        </li>
-        <li>
-          <a href="#factores-estructurales" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">5. Factores Estructurales</a>
-        </li>
-        <li>
-          <a href="#iniciativas-desregulacion" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">6. Iniciativas Desregulación</a>
-        </li>
-        <li>
-          <a href="#lecciones-comparadas" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">7. Lecciones y Recomendaciones</a>
-        </li>
-        <li>
-          <a href="#conclusiones" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">8. Conclusiones</a>
-        </li>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#executive-summary" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">Resumen Ejecutivo</a></li>
+        <li><a href="#marco-conceptual" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">1. Marco Conceptual</a></li>
+        <li><a href="#evolucion-historica" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">2. Evolución Histórica</a></li>
+        <li><a href="#magnitud-carga" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">3. Magnitud de la Carga</a></li>
+        <li><a href="#impacto-sectorial" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">4. Impacto Sectorial</a></li>
+        <li><a href="#factores-estructurales" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">5. Factores Estructurales</a></li>
+        <li><a href="#iniciativas-desregulacion" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">6. Iniciativas Desregulación</a></li>
+        <li><a href="#lecciones-comparadas" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">7. Lecciones y Recomendaciones</a></li>
+        <li><a href="#conclusiones" class="block py-2 px-3 rounded hover:bg-white hover:bg-opacity-10 transition-colors">8. Conclusiones</a></li>
       </ul>
     </nav>
 
@@ -253,32 +235,33 @@
                   <p>Bolivia presenta una de las cargas burocráticas más elevadas de América Latina, con costos administrativos que absorben entre <strong>5-13% del PIB</strong> (estimado en <strong>$2,000-5,200 millones anuales</strong>).</p>
 
                   <p>El país requiere <strong>528-2,600 horas</strong> para constituir una empresa (vs. 4.5 días en Chile) y dedica <strong>1,200 horas anuales</strong> por empresa a trámites.</p>
+
+                  <p>A pesar de reformas parciales como la Ley N° 2558 y la modernización aduanera (VUCE), la ausencia de institucionalidad para medir y eliminar barreras burocráticas perpetúa ineficiencias que afectan desproporcionadamente sectores clave como salud, educación e infraestructura.</p>
                 </div>
               </div>
             </div>
 
             <div class="hero-visual fade-in-up" style="transition-delay: 0.4s;">
               <div class="bg-gradient-to-br from-accent to-red-700 p-6 rounded-xl shadow-2xl hover-card text-white">
-                <h3 class="text-lg font-bold mb-4 border-b border-white border-opacity-20 pb-2">Comparación Regional (Ranking)</h3>
+                <h3 class="text-lg font-bold mb-4 border-b border-white border-opacity-20 pb-2">Comparación Regional</h3>
                 <div class="space-y-4 text-sm">
                   <div class="flex justify-between items-center p-2 bg-white bg-opacity-10 rounded">
-                    <span>🇧🇴 Bolivia</span>
+                    <span>Bolivia</span>
                     <span class="font-bold text-xl">150/190</span>
                   </div>
                   <div class="flex justify-between items-center p-2">
-                    <span>🇨🇱 Chile</span>
+                    <span>Chile</span>
                     <span class="font-bold">59/190</span>
                   </div>
                   <div class="flex justify-between items-center p-2">
-                    <span>🇵🇪 Perú</span>
+                    <span>Perú</span>
                     <span class="font-bold">76/190</span>
                   </div>
                   <div class="flex justify-between items-center p-2">
-                    <span>🇨🇴 Colombia</span>
+                    <span>Colombia</span>
                     <span class="font-bold">67/190</span>
                   </div>
                 </div>
-                <div class="mt-4 text-xs text-right opacity-70">Fuente: Doing Business</div>
               </div>
             </div>
           </div>
@@ -287,7 +270,7 @@
 
       <section id="marco-conceptual" class="py-16 bg-surface fade-in-up">
         <div class="container mx-auto px-6 max-w-6xl">
-          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">1. Marco Conceptual y Metodológico</h2>
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">1. Marco Conceptual y Metodológico del Análisis</h2>
 
           <div class="prose prose-lg max-w-none">
             <h3 class="text-2xl font-semibold canela text-secondary mb-6">1.1 Definición Operativa de Costos Administrativos</h3>
@@ -296,39 +279,39 @@
               <div class="bg-blue-50 p-6 rounded-lg hover-card border-t-4 border-blue-500">
                 <h4 class="font-bold text-primary mb-3">Costos Directos</h4>
                 <ul class="text-sm space-y-2 mb-4 text-gray-600">
-                  <li><i class="fas fa-check text-blue-400 mr-2"></i>Tarifas y tributos</li>
-                  <li><i class="fas fa-check text-blue-400 mr-2"></i>Gastos de tramitación</li>
-                  <li><i class="fas fa-check text-blue-400 mr-2"></i>Pagos a intermediarios</li>
+                  <li>• Tarifas y tributos</li>
+                  <li>• Gastos de tramitación</li>
+                  <li>• Pagos a intermediarios</li>
                 </ul>
                 <div class="mt-auto">
                     <div class="text-2xl font-bold text-accent">$467 USD</div>
-                    <div class="text-xs text-muted">Costo promedio constitución</div>
+                    <div class="text-xs text-muted">Costo promedio constitución empresa</div>
                 </div>
               </div>
 
               <div class="bg-yellow-50 p-6 rounded-lg hover-card border-t-4 border-yellow-500">
                 <h4 class="font-bold text-primary mb-3">Costos Indirectos</h4>
                 <ul class="text-sm space-y-2 mb-4 text-gray-600">
-                  <li><i class="fas fa-clock text-yellow-500 mr-2"></i>Tiempo de oportunidad</li>
-                  <li><i class="fas fa-clock text-yellow-500 mr-2"></i>Pérdida productividad</li>
-                  <li><i class="fas fa-clock text-yellow-500 mr-2"></i>Costos de espera</li>
+                  <li>• Tiempo de oportunidad</li>
+                  <li>• Pérdida de productividad</li>
+                  <li>• Costos de oportunidad</li>
                 </ul>
                 <div class="mt-auto">
                     <div class="text-2xl font-bold text-accent">1,200 horas</div>
-                    <div class="text-xs text-muted">Dedicadas anualmente</div>
+                    <div class="text-xs text-muted">Dedicadas anualmente a trámites</div>
                 </div>
               </div>
 
               <div class="bg-green-50 p-6 rounded-lg hover-card border-t-4 border-green-500">
-                <h4 class="font-bold text-primary mb-3">Cumplimiento</h4>
+                <h4 class="font-bold text-primary mb-3">Costos de Cumplimiento</h4>
                 <ul class="text-sm space-y-2 mb-4 text-gray-600">
-                  <li><i class="fas fa-file-contract text-green-500 mr-2"></i>Sistemas información</li>
-                  <li><i class="fas fa-file-contract text-green-500 mr-2"></i>Asesoría legal</li>
-                  <li><i class="fas fa-file-contract text-green-500 mr-2"></i>Capacitación</li>
+                  <li>• Sistemas de información</li>
+                  <li>• Asesoría legal</li>
+                  <li>• Capacitación</li>
                 </ul>
                 <div class="mt-auto">
                     <div class="text-2xl font-bold text-accent">15%</div>
-                    <div class="text-xs text-muted">Tiempo alta dirección</div>
+                    <div class="text-xs text-muted">Tiempo de alta dirección en regulaciones</div>
                 </div>
               </div>
             </div>
@@ -350,19 +333,35 @@
                   <tbody class="space-y-1">
                     <tr class="border-b hover:bg-gray-100 transition-colors">
                       <td class="py-3 font-medium">Banco Mundial</td>
-                      <td>Facilidad negocios</td>
+                      <td>Posición global facilidad negocios</td>
                       <td class="font-bold text-red-600">150/190</td>
-                      <td><a href="#" class="citation">2020</a></td>
+                      <td>
+                        <a href="https://archive.doingbusiness.org/en/data/exploreeconomies/bolivia" class="citation">2020</a>
+                      </td>
                     </tr>
                     <tr class="border-b hover:bg-gray-100 transition-colors">
                       <td class="py-3 font-medium">BID</td>
-                      <td>Horas por trámite</td>
+                      <td>Horas por trámite ciudadano</td>
                       <td class="font-bold text-orange-600">11.3 horas</td>
-                      <td><a href="#" class="citation">2018</a></td>
+                      <td>
+                        <a href="https://www.americasquarterly.org/article/heres-how-to-exit-latin-americas-maze-of-corruption/" class="citation">2018</a>
+                      </td>
+                    </tr>
+                    <tr class="border-b hover:bg-gray-100 transition-colors">
+                      <td class="py-3 font-medium">CEPAL</td>
+                      <td>Gasto público total</td>
+                      <td class="font-bold">$18.7 mil millones</td>
+                      <td>
+                        <a href="https://www.statista.com/statistics/1391862/general-government-expenditure-bolivia/?srsltid=AfmBOooIAJ8F2jgg7J5fQGBwVMkOpTZWzKJgt5OhFb6X2vUpaZUHNCIu" class="citation">2024</a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6 hover-card">
+              <p class="text-sm"><strong>Brecha Crítica:</strong> Bolivia no cuenta con estimación oficial consolidada del costo de la burocracia, a diferencia de países como Perú (<a href="https://www.gob.pe/institucion/indecopi/noticias/1146443-en-el-ultimo-quinquenio-indecopi-elimino-mas-de-26-000-barreras-burocraticas-generando-un-ahorro-de-873-6-millones-de-soles" class="citation">INDECOPI</a>) o México (COFEMER).</p>
             </div>
           </div>
         </div>
@@ -372,7 +371,7 @@
 
       <section id="evolucion-historica" class="py-16 bg-background fade-in-up">
         <div class="container mx-auto px-6 max-w-6xl">
-          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">2. Evolución Histórica</h2>
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">2. Evolución Histórica del Entorno Regulatorio y Administrativo</h2>
 
           <div class="space-y-12">
             <div class="bg-surface p-8 rounded-xl shadow-md hover-card">
@@ -383,13 +382,13 @@
 
               <div class="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 class="font-bold text-primary mb-4">El Fondo Económico y Social</h4>
+                  <h4 class="font-bold text-primary mb-4">El Fondo Económico y Social (FES)</h4>
                   <div class="space-y-3">
                     <div class="bg-green-100 p-4 rounded-lg border border-green-200">
                       <div class="text-3xl font-bold text-green-700">3.5%</div>
-                      <div class="text-sm text-green-800 font-medium">Costos administrativos</div>
+                      <div class="text-sm text-green-800 font-medium">Costos administrativos del presupuesto total</div>
                     </div>
-                    <p class="text-sm text-gray-600">Nivel comparable al Banco Mundial y superior a fondos similares en la región.</p>
+                    <p class="text-sm text-gray-600">Nivel comparable al Banco Mundial (3-4%) y superior a fondos similares en Haití, Honduras y Guatemala (6-10%).</p>
                   </div>
                 </div>
 
@@ -398,9 +397,9 @@
                   <div class="space-y-3">
                     <div class="bg-red-100 p-4 rounded-lg border border-red-200">
                       <div class="text-3xl font-bold text-red-700">17-20%</div>
-                      <div class="text-sm text-red-800 font-medium">Costos administrativos</div>
+                      <div class="text-sm text-red-800 font-medium">Costos administrativos de aportes</div>
                     </div>
-                    <p class="text-sm text-gray-600">Una de las tasas más altas que motivó la re-reforma de 2010.</p>
+                    <p class="text-sm text-gray-600">Una de las tasas más altas de la región, que motivó parcialmente la re-reforma de 2010.</p>
                   </div>
                 </div>
               </div>
@@ -409,25 +408,77 @@
             <div class="bg-surface p-8 rounded-xl shadow-md hover-card">
               <h3 class="text-2xl font-semibold canela text-secondary mb-6 flex items-center">
                   <span class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full mr-3">2006-2019</span>
-                  Nacionalización y Expansión
+                  Nacionalización y Expansión del Estado
               </h3>
-              
-              <div class="bg-blue-50 p-6 rounded-lg mb-6 border-l-4 border-blue-600">
-                  <h4 class="font-bold text-primary mb-4">Expansión Explosiva del Empleo Público</h4>
+
+              <div class="mb-6">
+                <div class="bg-blue-50 p-6 rounded-lg mb-6 border-l-4 border-blue-600">
+                  <h4 class="font-bold text-primary mb-2">Expansión del Empleo Público</h4>
                   <div class="grid grid-cols-3 gap-4 text-center">
                     <div class="p-2">
-                      <div class="text-2xl font-bold text-blue-700">38k</div>
-                      <div class="text-xs text-blue-600 uppercase">Servidores 2001</div>
+                      <div class="text-2xl font-bold text-blue-700">38,258</div>
+                      <div class="text-xs text-blue-600">Servidores en 2001</div>
                     </div>
                     <div class="p-2 border-x border-blue-200">
-                      <div class="text-2xl font-bold text-blue-700">297k</div>
-                      <div class="text-xs text-blue-600 uppercase">Servidores 2013</div>
+                      <div class="text-2xl font-bold text-blue-700">297,039</div>
+                      <div class="text-xs text-blue-600">Servidores en 2013</div>
                     </div>
                     <div class="p-2">
-                      <div class="text-2xl font-bold text-accent">+676%</div>
-                      <div class="text-xs text-accent uppercase">Incremento</div>
+                      <div class="text-2xl font-bold text-accent">676%</div>
+                      <div class="text-xs text-accent">Incremento acumulado</div>
                     </div>
                   </div>
+                  <p class="text-xs text-gray-600 mt-2">Fuente: <a href="https://nuso.org/articulo/la-nueva-burocracia-plurinacional-en-bolivia/" class="citation">Nueva Sociedad</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-primary mb-3">Paradoja de la Simplificación</h4>
+                  <p class="text-sm mb-3">A pesar de la <a href="https://latinamerica.hss.de/fileadmin/user_upload/Projects_HSS/Latin_America/Bolivia/Revista-Analisis_e_investigacion_No_17_1.pdf" class="citation">Ley N° 2558 de Simplificación</a>, la práctica reveló una brecha significativa:</p>
+                  <ul class="text-sm space-y-1">
+                    <li>• Digitalización que operó en dirección contraria</li>
+                    <li>• Superposición de sistemas informáticos a procesos manuales</li>
+                    <li>• Multiplicación de plataformas incompatibles</li>
+                  </ul>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded-lg">
+                  <h4 class="font-bold text-primary mb-3">Patrimonialismo Institucionalizado</h4>
+                  <p class="text-sm mb-3">Investigación de la <a href="https://www.files.ethz.ch/isn/100560/wp202.pdf" class="citation">ETH Zürich</a> documenta:</p>
+                  <ul class="text-sm space-y-1">
+                    <li>• Nombramientos basados en lealtad política</li>
+                    <li>• Rotación de funcionarios por ciclos electorales</li>
+                    <li>• Presupuesto no vinculante con reasignaciones discrecionales</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-surface p-8 rounded-lg shadow-sm hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6 flex items-center">
+                  <span class="bg-orange-100 text-orange-600 text-sm px-3 py-1 rounded-full mr-3">2020-2023</span>
+                  Pandemia y Estancamiento Reformista
+              </h3>
+
+              <div class="bg-orange-50 border-l-4 border-orange-400 p-6">
+                <h4 class="font-bold text-primary mb-4">Caso Tetisol: Incremento de Costos en Pandemia</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-orange-600">+$400M</div>
+                    <div class="text-sm text-orange-500">Costos adicionales</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-orange-600">+50%</div>
+                    <div class="text-sm text-orange-500">Incremento de precios</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-orange-600">~1%</div>
+                    <div class="text-sm text-orange-500">del PIB afectado</div>
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">Estudio de <a href="https://www.icnl.org/wp-content/uploads/our-work_INFORME-FINAL-BOLIVIA.pdf" class="citation">CEDLA</a> evidenciando cómo la complejidad administrativa en crisis genera costos masivos.</p>
               </div>
             </div>
           </div>
@@ -438,64 +489,142 @@
 
       <section id="magnitud-carga" class="py-16 bg-surface fade-in-up">
         <div class="container mx-auto px-6 max-w-6xl">
-          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">3. Magnitud de la Carga Administrativa</h2>
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">3. Magnitud y Caracterización de la Carga Administrativa en Bolivia</h2>
 
           <div class="space-y-12">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="bg-red-50 p-8 rounded-xl hover-card relative overflow-hidden group">
                 <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-red-200 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
-                <h3 class="text-xl font-bold text-red-800 mb-6 relative z-10">Ranking Doing Business</h3>
-                
+                <h3 class="text-xl font-bold text-red-800 mb-6 relative z-10">Ranking Doing Business 2020</h3>
                 <div class="flex items-end mb-6">
                     <div class="text-5xl font-bold text-red-600 leading-none">150</div>
                     <div class="text-xl text-red-400 font-medium ml-2 mb-1">/ 190</div>
                 </div>
+                <div class="text-sm text-red-500 mb-4 z-10 relative">Posición global</div>
 
-                <div class="space-y-3 text-sm relative z-10">
+                <div class="space-y-2 text-sm relative z-10">
                   <div class="flex justify-between border-b border-red-200 pb-2">
-                    <span>Pago de Impuestos</span>
+                    <span>Pago de Impuestos:</span>
                     <span class="font-bold text-red-700">186/190</span>
                   </div>
                   <div class="flex justify-between border-b border-red-200 pb-2">
-                    <span>Constitución Empresas</span>
+                    <span>Constitución Empresas:</span>
                     <span class="font-bold text-red-700">175/190</span>
                   </div>
+                  <div class="flex justify-between border-b border-red-200 pb-2">
+                    <span>Obtención Electricidad:</span>
+                    <span class="font-bold text-red-700">96/190</span>
+                  </div>
                 </div>
+                <p class="text-xs text-gray-600 mt-4 relative z-10">
+                  Fuente: <a href="https://archive.doingbusiness.org/en/data/exploreeconomies/bolivia" class="citation">Banco Mundial</a>
+                </p>
               </div>
 
               <div class="bg-blue-50 p-8 rounded-xl hover-card relative overflow-hidden group">
                 <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-200 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
-                <h3 class="text-xl font-bold text-blue-800 mb-6 relative z-10">Tiempo Constitución</h3>
-                
+                <h3 class="text-xl font-bold text-blue-800 mb-6 relative z-10">Tiempo para Constituir Empresa</h3>
                 <div class="flex items-end mb-6">
                     <div class="text-5xl font-bold text-blue-600 leading-none">2,600+</div>
                     <div class="text-lg text-blue-400 ml-2 mb-1">horas promedio</div>
                 </div>
 
                 <div class="space-y-3 text-sm relative z-10">
-                    <p class="text-gray-600">Muy superior al promedio regional. Varía drásticamente por sector:</p>
-                    <div class="flex gap-2 mt-2">
-                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Construcción: 3,072h</span>
-                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Manufactura: 528h</span>
-                    </div>
+                  <div class="flex justify-between">
+                    <span>Sector I (construcción, agro):</span>
+                    <span class="font-bold">3,072h</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Sector II (manufactura):</span>
+                    <span class="font-bold">528h</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Sector III (servicios):</span>
+                    <span class="font-bold">3,072h</span>
+                  </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-4 relative z-10">
+                  Fuente: <a href="http://freedom.fiu.edu/wp-content/uploads/2024/07/2023-IndexBureaucracy-SpanishCompleteReport.pdf" class="citation">Índice de Burocracia Iberoamericano 2023</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">3.1 Indicadores Cuantitativos Clave</h3>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary mb-2">37.3%</div>
+                  <div class="text-sm text-muted mb-2">Costo de inicio (% INB per cápita)</div>
+                  <div class="text-xs text-gray-600">
+                    vs. 31.4% promedio ALC
+                    <br/>
+                    Fuente: <a href="https://www.theglobaleconomy.com/Bolivia/Cost_of_starting_business/" class="citation">Banco Mundial</a>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary mb-2">1,025h</div>
+                  <div class="text-sm text-muted mb-2">Horas anuales en impuestos</div>
+                  <div class="text-xs text-gray-600">
+                    vs. 317h promedio regional
+                    <br/>
+                    vs. 158.8h OCDE
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary mb-2">11.3h</div>
+                  <div class="text-sm text-muted mb-2">Promedio por trámite</div>
+                  <div class="text-xs text-gray-600">
+                    Mayor que Perú (8.6h), Colombia (7.4h), Chile (2.2h)
+                    <br/>
+                    Fuente: <a href="https://www.americasquarterly.org/article/heres-how-to-exit-latin-americas-maze-of-corruption/" class="citation">BID</a>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-xl shadow-inner">
-                <h3 class="text-2xl font-semibold canela text-secondary mb-6 text-center">Impacto Económico Agregado</h3>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="text-center p-6 bg-white rounded-lg shadow-sm hover-card">
-                         <div class="text-4xl font-bold text-primary mb-2">5-13%</div>
-                         <div class="text-sm font-bold text-gray-500 uppercase tracking-wide">Del PIB Nacional</div>
-                         <p class="text-xs text-gray-400 mt-2">Est. $2,000 - $5,200 Millones USD</p>
+
+            <div class="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-lg shadow-inner">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">3.2 Estimaciones del Costo Económico Agregado</h3>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Rango de Estimaciones</h4>
+                  <div class="space-y-4">
+                    <div class="bg-white p-4 rounded border-l-4 border-red-400 hover-card">
+                      <div class="font-bold text-lg">5-13% del PIB</div>
+                      <div class="text-sm text-gray-600">$2,000 - $5,200 millones anuales</div>
+                      <div class="text-xs text-muted mt-1">Incluye costos indirectos y externalidades</div>
                     </div>
-                    <div class="text-center p-6 bg-white rounded-lg shadow-sm hover-card">
-                         <div class="text-4xl font-bold text-green-600 mb-2">$500M</div>
-                         <div class="text-sm font-bold text-gray-500 uppercase tracking-wide">Ahorro Potencial Anual</div>
-                         <p class="text-xs text-gray-400 mt-2">Basado en benchmarking regional</p>
+
+                    <div class="bg-white p-4 rounded border-l-4 border-blue-400 hover-card">
+                      <div class="font-bold text-lg">$100-500 millones</div>
+                      <div class="text-sm text-gray-600">Ahorro potencial anual</div>
+                      <div class="text-xs text-muted mt-1">Basado en benchmarking regional</div>
                     </div>
+                  </div>
                 </div>
+
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Comparación con Perú (INDECOPI)</h4>
+                  <div class="bg-white p-4 rounded hover-card">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <div class="text-2xl font-bold text-green-600">26,387</div>
+                        <div class="text-sm text-green-500">Barreras eliminadas</div>
+                      </div>
+                      <div>
+                        <div class="text-2xl font-bold text-green-600">$230M</div>
+                        <div class="text-sm text-green-500">Ahorro generado</div>
+                      </div>
+                    </div>
+                    <p class="text-xs text-gray-600">
+                      Fuente: <a href="https://www.gob.pe/institucion/indecopi/noticias/1146443-en-el-ultimo-quinquenio-indecopi-elimino-mas-de-26-000-barreras-burocraticas-generando-un-ahorro-de-873-6-millones-de-soles" class="citation">INDECOPI 2020-2024</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -505,7 +634,7 @@
 
       <section id="impacto-sectorial" class="py-16 bg-background fade-in-up">
         <div class="container mx-auto px-6 max-w-6xl">
-          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">4. Impacto Sectorial</h2>
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">4. Impacto Sectorial del Gasto en Trabas Administrativas</h2>
 
           <div class="space-y-12">
             <div class="bg-surface p-8 rounded-xl shadow-sm hover-card border-l-4 border-red-500">
@@ -515,19 +644,61 @@
                 </div>
                 <h3 class="text-2xl font-semibold canela text-secondary">Sector Salud</h3>
               </div>
+
               <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Costos de Afiliación CNS</h4>
                   <div class="bg-red-50 p-5 rounded-lg">
-                      <h4 class="font-bold text-red-800 mb-2">Afiliación CNS</h4>
-                      <p class="text-3xl font-bold text-red-600 mb-2">240-504h</p>
-                      <p class="text-sm text-gray-600">Tiempo requerido para afiliar, incentivando la informalidad laboral.</p>
+                    <div class="text-center mb-4">
+                      <div class="text-3xl font-bold text-red-600">240-504h</div>
+                      <div class="text-sm text-red-500">Tiempo de afiliación</div>
+                    </div>
+                    <ul class="text-sm space-y-2">
+                      <li>• Retraso en protección social de trabajadores</li>
+                      <li>• Generación de costos de oportunidad</li>
+                      <li>• Incentivo a la informalidad laboral</li>
+                    </ul>
                   </div>
-                  <div>
-                      <h4 class="font-bold text-primary mb-2">Consecuencias</h4>
-                      <ul class="space-y-2 text-sm text-gray-600">
-                          <li class="flex items-start"><span class="mr-2 text-red-500">•</span>Tiempos de espera prolongados</li>
-                          <li class="flex items-start"><span class="mr-2 text-red-500">•</span>Sobrecostos por burocracia en pandemia (>50%)</li>
-                      </ul>
+
+                  <div class="mt-6">
+                    <h4 class="font-bold text-primary mb-3">Impacto en Servicios</h4>
+                    <div class="space-y-2 text-sm">
+                      <div class="flex items-center">
+                        <div class="w-4 h-4 bg-red-400 rounded-full mr-2"></div>
+                        <span>Tiempos de espera prolongados</span>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="w-4 h-4 bg-orange-400 rounded-full mr-2"></div>
+                        <span>Trámites complejos para especialidades</span>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+                        <span>Demoras en habilitación de establecimientos</span>
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                <div>
+                  <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                    <h4 class="font-bold text-primary mb-3">Distribución del Gasto</h4>
+                    <div class="text-center">
+                      <div class="text-2xl font-bold text-gray-700">15-25%</div>
+                      <div class="text-sm text-gray-600">Estimado destinado a funciones administrativas</div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">vs. sistemas de salud más eficientes</p>
+                  </div>
+
+                  <div class="bg-red-100 p-4 rounded-lg">
+                    <h4 class="font-bold text-primary mb-3">Caso Tetisol: Lección de Crisis</h4>
+                    <p class="text-sm mb-2">La complejidad administrativa durante la pandemia generó:</p>
+                    <ul class="text-sm space-y-1">
+                      <li>• Incremento de precios &gt;50%</li>
+                      <li>• Costos adicionales por requisitos burocráticos</li>
+                      <li>• Demoras en implementación de soluciones</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -538,103 +709,904 @@
                 </div>
                 <h3 class="text-2xl font-semibold canela text-secondary">Sector Educación</h3>
               </div>
-              <p class="mb-4 text-gray-600">La gestión presupuestaria fragmentada afecta la ejecución de recursos.</p>
-              <div class="grid md:grid-cols-3 gap-4">
-                  <div class="bg-blue-50 p-4 rounded text-center">
-                      <div class="font-bold text-blue-800">Caso UAJMS</div>
-                      <div class="text-sm">Complejidad financiera paralizante</div>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Caso UAJMS: Complejidad Financiera</h4>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-center mb-4">
+                      <div class="text-2xl font-bold text-blue-600">Bs. 396M</div>
+                      <div class="text-sm text-blue-500">Presupuesto 2023</div>
+                      <div class="text-xs text-muted">~$57M USD</div>
+                    </div>
+                    <p class="text-sm">Distribuido en múltiples programas financieros con diferentes mecanismos de rendición de cuentas.</p>
                   </div>
-                  <div class="bg-blue-50 p-4 rounded text-center">
-                      <div class="font-bold text-blue-800">MECAPACA</div>
-                      <div class="text-sm">Fracaso por trabas administrativas</div>
+
+                  <div class="mt-6">
+                    <h4 class="font-bold text-primary mb-3">Impacto del Patrimonialismo</h4>
+                    <ul class="text-sm space-y-2">
+                      <li>• Asignación por criterios políticos</li>
+                      <li>• Rotación de autoridades por ciclos electorales</li>
+                      <li>• Selección de proyectos por visibilidad política</li>
+                    </ul>
                   </div>
-                  <div class="bg-blue-50 p-4 rounded text-center">
-                      <div class="font-bold text-blue-800">Certificación</div>
-                      <div class="text-sm">Barreras de entrada a privados</div>
+                </div>
+
+                <div>
+                  <div class="bg-orange-50 p-4 rounded-lg mb-6">
+                    <h4 class="font-bold text-primary mb-3">Caso MECAPACA: Fracaso Administrativo</h4>
+                    <p class="text-sm mb-3">Programa de Mejoramiento de Calidad Educativa con financiamiento del Banco Mundial:</p>
+                    <ul class="text-sm space-y-1">
+                      <li>• Complejidades en procedimientos de contratación</li>
+                      <li>• Demoras en rendición de cuentas</li>
+                      <li>• No ejecución de recursos asignados</li>
+                    </ul>
                   </div>
+
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-primary mb-3">Costos de Certificación</h4>
+                    <p class="text-sm">Barreras de entrada para instituciones educativas privadas y demoras en aprobación de programas para instituciones públicas.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-surface p-8 rounded-xl shadow-sm hover-card border-l-4 border-green-500">
+              <div class="flex items-center mb-6">
+                <div class="bg-green-100 p-3 rounded-full mr-4 text-green-600">
+                  <i class="fas fa-building text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-semibold canela text-secondary">Sector Infraestructura y Obras Públicas</h3>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Sobrecostos por Ineficiencia</h4>
+                  <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <div class="text-center">
+                      <div class="text-3xl font-bold text-green-600">30-50%</div>
+                      <div class="text-sm text-green-500">Sobrecostos habituales</div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-3 text-sm">
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-2"></div>
+                      <span>Demoras en liberación de fondos → costos financieros</span>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-2"></div>
+                      <span>Requerimientos de adquisiciones por cambios normativos</span>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-2"></div>
+                      <span>Procesos de aprobación extensos → moras</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <h4 class="font-bold text-primary mb-3">Modernización Aduanera: Caso de Éxito</h4>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div class="text-xl font-bold text-blue-600">50-60%</div>
+                        <div class="text-sm text-blue-500">Reducción tiempos importación</div>
+                      </div>
+                      <div>
+                        <div class="text-xl font-bold text-blue-600">20-25%</div>
+                        <div class="text-sm text-blue-500">Reducción costos logísticos</div>
+                      </div>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">
+                      Fuente: <a href="https://archive.doingbusiness.org/content/dam/doingBusiness/Profiles/Regional/DB2020/LAC.pdf" class="citation">Doing Business 2020</a>
+                    </p>
+                  </div>
+
+                  <div class="bg-yellow-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-primary mb-3">Lecciones del SUMA/VUCE</h4>
+                    <ul class="text-sm space-y-1">
+                      <li>• Liderazgo político de alto nivel comprometido</li>
+                      <li>• Inversión en infraestructura tecnológica</li>
+                      <li>• Capacitación intensiva de funcionarios</li>
+                      <li>• Comunicación efectiva con usuarios</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="lecciones-comparadas" class="py-16 bg-surface fade-in-up">
-        <div class="container mx-auto px-6 max-w-6xl">
-          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">7. Lecciones y Recomendaciones</h2>
+      <div class="section-divider"></div>
 
-          <div class="bg-gradient-to-br from-indigo-50 to-blue-100 p-8 rounded-xl hover-card mb-12">
-            <h3 class="text-2xl font-semibold canela text-indigo-900 mb-6 flex items-center">
-                <i class="fas fa-lightbulb text-yellow-500 mr-3"></i> Modelo de Referencia: Perú (INDECOPI)
-            </h3>
-            
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="text-3xl font-bold text-indigo-600 mb-2">26,387</div>
-                    <div class="text-sm text-gray-500 font-bold">Barreras Eliminadas</div>
+      <section id="factores-estructurales" class="py-16 bg-surface fade-in-up">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">5. Factores Estructurales que Amplifican los Costos Administrativos</h2>
+
+          <div class="space-y-12">
+            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-8 rounded-lg hover-card">
+              <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-users-cog text-2xl text-red-600"></i>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="text-3xl font-bold text-green-600 mb-2">$230M</div>
-                    <div class="text-sm text-gray-500 font-bold">Ahorro Generado</div>
+                <h3 class="text-2xl font-semibold canela text-secondary">Patrimonialismo y Captura Política</h3>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Características del Sistema</h4>
+                  <div class="space-y-4">
+                    <div class="bg-white p-4 rounded border-l-4 border-red-400">
+                      <h5 class="font-semibold mb-2">Reclutamiento por Lealtad Política</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• Procesos informales no basados en mérito</li>
+                        <li>• Personal sin capacidades técnicas adecuadas</li>
+                        <li>• Alta rotación vinculada a ciclos electorales</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-white p-4 rounded border-l-4 border-orange-400">
+                      <h5 class="font-semibold mb-2">Controles y Evaluaciones Politizadas</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• Controles políticos fuertes</li>
+                        <li>• Decisiones subóptimas por presión</li>
+                        <li>• Evaluaciones sin retroalimentación real</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="text-3xl font-bold text-blue-600 mb-2">91%</div>
-                    <div class="text-sm text-gray-500 font-bold">Eliminación Voluntaria</div>
+
+                <div>
+                  <div class="bg-white p-4 rounded mb-6">
+                    <h4 class="font-bold text-primary mb-4">Consecuencias Económicas</h4>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div class="text-2xl font-bold text-red-600">11%</div>
+                        <div class="text-sm text-red-500">Funcionarios &gt;3 años</div>
+                        <div class="text-xs text-muted">Ministerio Educación 2013</div>
+                      </div>
+                      <div>
+                        <div class="text-2xl font-bold text-red-600">Pérdida</div>
+                        <div class="text-sm text-red-500">Conocimiento institucional</div>
+                        <div class="text-xs text-muted">Curvas de aprendizaje prolongadas</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-yellow-100 p-4 rounded">
+                    <h4 class="font-bold text-primary mb-3">Clientelismo Presupuestario</h4>
+                    <p class="text-sm">Presupuesto no vinculante con reasignaciones discrecionales, asignaciones basadas en factores político-partidarios más que técnicos.</p>
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg hover-card">
+              <div class="flex items-center mb-6">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-sitemap text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-2xl font-semibold canela text-secondary">Fragmentación Institucional</h3>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">Multiplicidad de Entidades</h4>
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-blue-600">55</div>
+                    <div class="text-sm text-blue-500">Entidades para registro ONG</div>
+                  </div>
+                  <ul class="text-sm space-y-1">
+                    <li>• Costos de coordinación</li>
+                    <li>• Duplicidad de esfuerzos</li>
+                    <li>• Inconsistencias informativas</li>
+                    <li>• Oportunidades para captura</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">Falta de Coordinación</h4>
+                  <div class="space-y-3 text-sm">
+                    <p>Procesos fragmentados donde cada entidad opera con autonomía casi total:</p>
+                    <ul class="space-y-1">
+                      <li>• Información no compartida</li>
+                      <li>• Requisitos no reconocidos</li>
+                      <li>• Plazos no sincronizados</li>
+                      <li>• Validaciones físicas paralelas</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">Ventanilla Única Incompleta</h4>
+                  <div class="bg-yellow-100 p-4 rounded mb-3">
+                    <div class="text-sm font-semibold text-yellow-800">tramites.gob.bo</div>
+                    <div class="text-xs text-yellow-600">Cobertura incompleta</div>
+                  </div>
+                  <ul class="text-sm space-y-1">
+                    <li>• Persistencia requisitos presenciales</li>
+                    <li>• Falta de interoperabilidad</li>
+                    <li>• Replicación procesos sin simplificación</li>
+                    <li>• Interfaces no intuitivas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-gray-50 to-slate-50 p-8 rounded-lg hover-card">
+              <div class="flex items-center mb-6">
+                <div class="bg-gray-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-exclamation-triangle text-2xl text-gray-600"></i>
+                </div>
+                <h3 class="text-2xl font-semibold canela text-secondary">Corrupción como Multiplicador de Costos</h3>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg border-l-4 border-red-400">
+                  <h4 class="font-bold text-primary mb-4">Contrataciones Públicas</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Licitaciones direccionadas</li>
+                    <li>• Especificaciones técnicas favorecidas</li>
+                    <li>• Evaluaciones subjetivas</li>
+                    <li>• Sobreprecios documentados</li>
+                  </ul>
+                  <p class="text-xs text-gray-600 mt-3">
+                    Casos visibles en pandemia COVID-19
+                    <br/>
+                    Fuente: <a href="https://borgenproject.org/poverty-reduction-in-bolivia/" class="citation">Investigaciones de contraloría</a>
+                  </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border-l-4 border-orange-400">
+                  <h4 class="font-bold text-primary mb-4">Evasión y Contrabando</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Deficiencias controles aduaneros</li>
+                    <li>• Pérdida base imponible</li>
+                    <li>• Reducción financiamiento público</li>
+                    <li>• Estimaciones: centenares MM USD/año</li>
+                  </ul>
+                  <p class="text-xs text-gray-600 mt-3">
+                    Mejoras parciales con SUMA/VUCE
+                    <br/>
+                    Pero persisten deficiencias estructurales
+                  </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border-l-4 border-yellow-400">
+                  <h4 class="font-bold text-primary mb-4">Costos Ocultos</h4>
+                  <div class="space-y-3 text-sm">
+                    <p>La corrupción funciona como un impuesto regresivo que:</p>
+                    <ul class="space-y-1">
+                      <li>• Incrementa precios finales</li>
+                      <li>• Reduce calidad de servicios</li>
+                      <li>• Desincentiva inversión privada</li>
+                      <li>• Perpetúa ineficiencias sistémicas</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                  <h4 class="font-bold text-xl text-primary mb-4">Agenda Prioritaria</h4>
-                  <ul class="space-y-4">
-                      <li class="bg-gray-50 p-4 rounded-lg flex items-start">
-                          <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 flex-shrink-0">1</span>
-                          <div>
-                              <span class="font-bold block text-gray-800">Simplificación Inicio Operaciones</span>
-                              <span class="text-sm text-gray-600">Reducir de 2,600h a 500h. Unificación de registros.</span>
-                          </div>
-                      </li>
-                      <li class="bg-gray-50 p-4 rounded-lg flex items-start">
-                          <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 flex-shrink-0">2</span>
-                          <div>
-                              <span class="font-bold block text-gray-800">Digitalización Real</span>
-                              <span class="text-sm text-gray-600">Interoperabilidad y silencio administrativo positivo.</span>
-                          </div>
-                      </li>
+      <div class="section-divider"></div>
+
+      <section id="iniciativas-desregulacion" class="py-16 bg-background fade-in-up">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">6. Iniciativas de Desregulación y Desburocratización</h2>
+
+          <div class="space-y-12">
+            <div class="bg-surface p-8 rounded-lg shadow-sm hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">6.1 Marco Normativo de Simplificación</h3>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-3">Ley N° 2558 (2004)</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Identificación requisitos innecesarios</li>
+                    <li>• Plazos máximos para trámites</li>
+                    <li>• Mecanismos atención ciudadana</li>
                   </ul>
+                  <div class="mt-4 p-3 bg-red-100 rounded">
+                    <div class="text-xs text-red-700">⚠️ Limitaciones:</div>
+                    <div class="text-xs text-red-600">Resistencias institucionales, falta seguimiento</div>
+                  </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-3">Decretos Supremos</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Eliminación requisitos específicos</li>
+                    <li>• Reformas sectoriales puntuales</li>
+                    <li>• Actualizaciones regulatorias</li>
+                  </ul>
+                  <div class="mt-4 p-3 bg-yellow-100 rounded">
+                    <div class="text-xs text-yellow-700">⚠️ Desafíos:</div>
+                    <div class="text-xs text-yellow-600">Falta coordinación intersectorial</div>
+                  </div>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-3">Plataformas Digitales</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• tramites.gob.bo</li>
+                    <li>• Sistemas de ventanilla única</li>
+                    <li>• Gobierno electrónico</li>
+                  </ul>
+                  <div class="mt-4 p-3 bg-orange-100 rounded">
+                    <div class="text-xs text-orange-700">⚠️ Deficiencias:</div>
+                    <div class="text-xs text-orange-600">Cobertura incompleta, interoperabilidad limitada</div>
+                  </div>
+                </div>
               </div>
-              <div class="bg-primary text-white p-8 rounded-xl flex flex-col justify-center text-center">
-                  <h4 class="font-bold text-xl mb-4 text-white">Conclusión Clave</h4>
-                  <p class="italic text-lg opacity-90">
-                      "La ausencia de institucionalidad para medir y eliminar barreras perpetúa ineficiencias. Se requiere una agencia autónoma y voluntad política de alto nivel."
-                  </p>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">6.2 Avances Medibles: Caso Aduanero Exitoso</h3>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Sistema SUMA/VUCE</h4>
+                  <div class="bg-white p-6 rounded-lg mb-6">
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div class="text-2xl font-bold text-green-600">50-60%</div>
+                        <div class="text-sm text-green-500">Menos tiempo importaciones</div>
+                        <div class="text-xs text-muted">De 8-10 días a 3-4 días</div>
+                      </div>
+                      <div>
+                        <div class="text-2xl font-bold text-green-600">50-75%</div>
+                        <div class="text-sm text-green-500">Menos tiempo exportaciones</div>
+                        <div class="text-xs text-muted">De 4-6 días a 1-2 días</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white p-4 rounded">
+                    <h5 class="font-semibold mb-2">Rankings Doing Business</h5>
+                    <div class="flex justify-between items-center">
+                      <span>Comercio Transfronterizo:</span>
+                      <span class="font-bold text-green-600">100/190</span>
+                    </div>
+                    <div class="text-xs text-gray-600">Mejora significativa en posición</div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Lecciones Clave para Replicación</h4>
+                  <div class="space-y-4">
+                    <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                      <h5 class="font-semibold mb-2">Liderazgo Político Comprometido</h5>
+                      <p class="text-sm">Compromiso de alto nivel con la reforma y recursos adecuados</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded border-l-4 border-green-400">
+                      <h5 class="font-semibold mb-2">Inversión Tecnológica</h5>
+                      <p class="text-sm">Infraestructura tecnológica robusta y capacitación intensiva</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                      <h5 class="font-semibold mb-2">Comunicación Efectiva</h5>
+                      <p class="text-sm">Estrategia clara de comunicación con usuarios y stakeholders</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">6.3 Limitaciones y Fracasos de las Reformas</h3>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg border-l-4 border-red-400">
+                  <h4 class="font-bold text-primary mb-3">Resistencia Institucional</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Funcionarios protegen poder discrecional</li>
+                    <li>• Entidades dependientes de control procesos</li>
+                    <li>• Incentivos perversos para mantener complejidad</li>
+                    <li>• Presupuestos vinculados a volumen de trámites</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border-l-4 border-orange-400">
+                  <h4 class="font-bold text-primary mb-3">Falta de Seguimiento</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Ausencia líneas de base sistemáticas</li>
+                    <li>• Indicadores de desempeño inconsistentes</li>
+                    <li>• Falta estudios de impacto rigurosos</li>
+                    <li>• Imposibilidad determinar qué funciona</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border-l-4 border-yellow-400">
+                  <h4 class="font-bold text-primary mb-3">Reversión por Cambios</h4>
+                  <ul class="text-sm space-y-2">
+                    <li>• Rotación de autoridades por ciclos políticos</li>
+                    <li>• Discontinuidad agendas modernización</li>
+                    <li>• Iniciativas no priorizadas por nuevos gobiernos</li>
+                    <li>• Pérdida de conocimiento institucional acumulado</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-primary mb-4">Caso Emblemático: Ley de Simplificación</h4>
+                <p class="text-sm mb-4">A pesar de la <a href="https://latinamerica.hss.de/fileadmin/user_upload/Projects_HSS/Latin_America/Bolivia/Revista-Analisis_e_investigacion_No_17_1.pdf" class="citation">Ley N° 2558</a>, la implementación reveló:</p>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                  <ul class="space-y-1">
+                    <li>• Resistencias institucionales significativas</li>
+                    <li>• Falta de mecanismos de seguimiento</li>
+                    <li>• Ausencia de sanciones efectivas</li>
+                  </ul>
+                  <ul class="space-y-1">
+                    <li>• Acumulación de normativa contradictoria</li>
+                    <li>• Digitalización que aumentó complejidad</li>
+                    <li>• Resultados limitados y reversibles</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="lecciones-comparadas" class="py-16 bg-surface fade-in-up">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">7. Lecciones de Experiencias Comparadas y Recomendaciones</h2>
+
+          <div class="space-y-12">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">7.1 El Caso Peruano: INDECOPI como Modelo de Referencia</h3>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Logros Cuantificables</h4>
+                  <div class="space-y-4">
+                    <div class="bg-white p-4 rounded text-center">
+                      <div class="text-3xl font-bold text-blue-600">26,387</div>
+                      <div class="text-sm text-blue-500">Barreras eliminadas (2020-2024)</div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded text-center">
+                      <div class="text-3xl font-bold text-green-600">$230M</div>
+                      <div class="text-sm text-green-500">Ahorro generado</div>
+                      <div class="text-xs text-muted">S/ 873.6 millones</div>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 bg-white p-4 rounded">
+                    <h5 class="font-semibold mb-3">Distribución del Ahorro</h5>
+                    <div class="text-sm space-y-2">
+                      <div class="flex justify-between">
+                        <span>Aplicación nacional:</span>
+                        <span class="font-bold">71.4%</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>Caso mayor impacto:</span>
+                        <span class="font-bold">60.6%</span>
+                      </div>
+                      <div class="text-xs text-gray-600 mt-2">
+                        Eliminación almacenamiento mayorista combustible
+                        <br/>
+                        Fuente: <a href="https://www.gob.pe/institucion/indecopi/noticias/1146443-en-el-ultimo-quinquenio-indecopi-elimino-mas-de-26-000-barreras-burocraticas-generando-un-ahorro-de-873-6-millones-de-soles" class="citation">INDECOPI</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Metodología Replicable</h4>
+                  <div class="space-y-4">
+                    <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                      <h5 class="font-semibold mb-2">Definición Legal Clara</h5>
+                      <p class="text-sm">Barreras como cualquier requisito que condiciona, restringe u obstaculiza el acceso al mercado.</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded border-l-4 border-green-400">
+                      <h5 class="font-semibold mb-2">Proceso Sistemático</h5>
+                      <ul class="text-sm space-y-1">
+                        <li>• Detección de oficio (92.8% casos)</li>
+                        <li>• Denuncias ciudadanas (7.2%)</li>
+                        <li>• Coordinación previa (91% eliminación voluntaria)</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                      <h5 class="font-semibold mb-2">Marco Legal Protegido</h5>
+                      <p class="text-sm">Autonomía efectiva, financiamiento independiente, designación técnica meritocrática.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">7.2 Propuestas para la Medición Sistemática de Costos</h3>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">Estudios Tiempo-Liberación</h4>
+                  <div class="text-sm space-y-3">
+                    <p>Adaptación metodología <a href="https://centrocompetencia.com/eliminacion-barreras-burocraticas-indecopi/" class="citation">OMA</a> para trámites administrativos:</p>
+                    <ul class="space-y-1">
+                      <li>• Establecer líneas de base comparables</li>
+                      <li>• Monitorear progreso reformas</li>
+                      <li>• Identificar cuellos de botella</li>
+                      <li>• Generar indicadores internacionales</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">Cuentas Satélite</h4>
+                  <div class="text-sm space-y-3">
+                    <p>Extensión sistema cuentas nacionales para cuantificar:</p>
+                    <ul class="space-y-1">
+                      <li>• Recursos dedicados a burocracia</li>
+                      <li>• Costos por sector económico</li>
+                      <li>• Efectos multiplicadores</li>
+                      <li>• Beneficios potenciales reformas</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">SIG Integrados</h4>
+                  <div class="text-sm space-y-3">
+                    <p>Implementación sistemas información gestión:</p>
+                    <ul class="space-y-1">
+                      <li>• Generación automática datos</li>
+                      <li>• Tiempos de respuesta medibles</li>
+                      <li>• Costos asociados transparentes</li>
+                      <li>• Resultados evaluables</li>
+                    </ul>
+                    <div class="mt-4 p-3 bg-blue-100 rounded">
+                      <div class="text-xs text-blue-700">Ejemplo Brasil:</div>
+                      <div class="text-lg font-bold text-blue-600">$370M</div>
+                      <div class="text-xs text-blue-500">Ahorro total 2019-2021</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">7.3 Agenda Prioritaria de Desburocratización</h3>
+
+              <div class="space-y-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 class="font-bold text-primary mb-4">Simplificación Inicio de Operaciones</h4>
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-between bg-white p-3 rounded">
+                        <span class="text-sm">Meta tiempo reducción:</span>
+                        <span class="font-bold text-green-600">2,600h → 500h</span>
+                      </div>
+                      <ul class="text-sm space-y-1">
+                        <li>• Unificación registro empresarial</li>
+                        <li>• Eliminación requisitos redundantes (30-50%)</li>
+                        <li>• Silencio administrativo positivo</li>
+                        <li>• Costos &lt;10% INB per cápita</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-primary mb-4">Unificación Registros</h4>
+                    <div class="space-y-3">
+                      <div class="bg-white p-3 rounded">
+                        <div class="font-semibold text-sm mb-2">RUC Fortalecido</div>
+                        <div class="text-xs text-muted">Integración fiscal, aduanera, laboral, sectorial</div>
+                      </div>
+                      <div class="bg-white p-3 rounded">
+                        <div class="font-semibold text-sm mb-2">Interoperabilidad</div>
+                        <div class="text-xs text-muted">Interfaces estándar intercambio automático</div>
+                      </div>
+                      <div class="bg-white p-3 rounded">
+                        <div class="font-semibold text-sm mb-2">Expediente Único</div>
+                        <div class="text-xs text-muted">Seguimiento integral reutilización documentos</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-primary mb-4">Automatización Procesos y Rendición de Cuentas</h4>
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                      <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                        <h5 class="font-semibold mb-2">Autorización Automática</h5>
+                        <div class="text-sm space-y-1">
+                          <div class="flex justify-between">
+                            <span>Licencias bajo riesgo:</span>
+                            <span class="font-bold text-blue-600">70% reducción</span>
+                          </div>
+                          <div class="flex justify-between">
+                            <span>Trámites aduaneros bajo riesgo:</span>
+                            <span class="font-bold text-blue-600">50% reducción</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="bg-white p-4 rounded border-l-4 border-green-400">
+                        <h5 class="font-semibold mb-2">Pagos Tributarios</h5>
+                        <div class="text-sm">
+                          Pre-llenado formularios y pago integrado → 60% reducción horas
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="space-y-4">
+                      <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                        <h5 class="font-semibold mb-2">Institucionalización Medición</h5>
+                        <div class="text-sm space-y-1">
+                          <div>• Unidad especializada con mandato legal</div>
+                          <div>• Reportes públicos eficiencia anuales</div>
+                          <div>• Mecanismos denuncia simplificados</div>
+                          <div>• Vinculación evaluaciones con incentivos</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="conclusiones" class="py-16 bg-background fade-in-up">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <h2 class="text-4xl font-bold canela text-primary mb-8 border-l-4 border-accent pl-4">8. Conclusiones y Perspectivas</h2>
+
+          <div class="space-y-12">
+            <div class="bg-surface p-8 rounded-lg shadow-sm hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">8.1 Síntesis de Hallazgos Principales</h3>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-red-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-red-700 mb-3">Magnitud Subestimada</h4>
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-red-600">5-13%</div>
+                    <div class="text-sm text-red-500">del PIB en costos administrativos</div>
+                  </div>
+                  <p class="text-sm">Estimación $2,000-5,200 millones anuales, sistemáticamente subestimada por falta de medición oficial.</p>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-blue-700 mb-3">Impacto Diferenciado</h4>
+                  <div class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                      <span>Sectores regulados:</span>
+                      <span class="font-bold text-blue-600">3-6x más carga</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Pequeñas empresas:</span>
+                      <span class="font-bold text-blue-600">Penalización mayor</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Sin conexiones:</span>
+                      <span class="font-bold text-blue-600">Barrera adicional</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                  <h4 class="font-bold text-green-700 mb-3">Potencial de Ahorro</h4>
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-green-600">$230M</div>
+                    <div class="text-sm text-green-500">Modelo INDECOPI Perú</div>
+                  </div>
+                  <p class="text-sm">Experiencia aduanera boliviana: 20-25% reducción costos. Potencial realizable con voluntad política.</p>
+                </div>
+              </div>
+
+              <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h4 class="font-bold text-primary mb-4">Comparación Regional Crítica</h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="border-b">
+                        <th class="text-left py-2">País</th>
+                        <th class="text-left py-2">Constitución Empresa</th>
+                        <th class="text-left py-2">Pago Impuestos</th>
+                        <th class="text-left py-2">Ranking Global</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b">
+                        <td class="py-2 font-semibold">Chile</td>
+                        <td class="py-2">4.5 días / ~0% costo</td>
+                        <td class="py-2">Top 50</td>
+                        <td class="py-2 font-bold text-green-600">59/190</td>
+                      </tr>
+                      <tr class="border-b">
+                        <td class="py-2 font-semibold">Perú</td>
+                        <td class="py-2">~20 días / ~20% costo</td>
+                        <td class="py-2">Mejorando</td>
+                        <td class="py-2 font-bold text-blue-600">~76/190</td>
+                      </tr>
+                      <tr class="border-b">
+                        <td class="py-2 font-semibold">Bolivia</td>
+                        <td class="py-2">39.5 días / 37.3% costo</td>
+                        <td class="py-2">186/190</td>
+                        <td class="py-2 font-bold text-red-600">150/190</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">8.2 Desafíos para la Generación de Evidencia</h3>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg border-l-4 border-red-400">
+                  <h4 class="font-bold text-primary mb-3">Necesidad Estimaciones Oficiales</h4>
+                  <div class="space-y-3 text-sm">
+                    <p>Prioridad máxima: crear capacidad institucional para medición periódica siguiendo modelos:</p>
+                    <ul class="space-y-1">
+                      <li>• INDECOPI Perú (mejor práctica)</li>
+                      <li>• COFEMER México (análisis impacto)</li>
+                      <li>• Ministerios Economía Chile/Colombia</li>
+                    </ul>
+                    <div class="bg-red-100 p-3 rounded mt-3">
+                      <div class="text-xs text-red-700">⚠️ Bolivia: completa ausencia institución similar</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border-l-4 border-blue-400">
+                  <h4 class="font-bold text-primary mb-3">Transparencia Fiscal Crítica</h4>
+                  <div class="space-y-3 text-sm">
+                    <p>Condiciones necesarias para rendición de cuentas:</p>
+                    <ul class="space-y-1">
+                      <li>• Desagregación gasto administrativo</li>
+                      <li>• Publicación indicadores eficiencia</li>
+                      <li>• Tiempos de trámite transparentes</li>
+                      <li>• Costos cumplimiento accesibles</li>
+                    </ul>
+                    <div class="bg-blue-100 p-3 rounded mt-3">
+                      <div class="text-xs text-blue-700">📊 Actualmente información fragmentada y no sistemática</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg border-l-4 border-green-400">
+                  <h4 class="font-bold text-primary mb-3">Construcción Capacidades</h4>
+                  <div class="space-y-3 text-sm">
+                    <p>Inversiones de largo plazo para ciclos virtuosos:</p>
+                    <ul class="space-y-1">
+                      <li>• Formación evaluación impacto regulatorio</li>
+                      <li>• Análisis costo-beneficio en diseño</li>
+                      <li>• Cultura de evidencia en administración</li>
+                      <li>• Profesionales en mejora regulatoria</li>
+                    </ul>
+                    <div class="bg-green-100 p-3 rounded mt-3">
+                      <div class="text-xs text-green-700">🎯 Habilitar ciclos continuos mejora</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-lg hover-card">
+              <h3 class="text-2xl font-semibold canela text-secondary mb-6">8.3 Escenarios Futuros y Condiciones para el Cambio</h3>
+
+              <div class="space-y-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 class="font-bold text-primary mb-4">Factores Políticos Clave</h4>
+                    <div class="space-y-4">
+                      <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                        <h5 class="font-semibold mb-2">Liderazgo de Alto Nivel</h5>
+                        <p class="text-sm">Compromiso explícito y sostenido del más alto nivel político</p>
+                      </div>
+
+                      <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                        <h5 class="font-semibold mb-2">Coaliciones de Apoyo</h5>
+                        <p class="text-sm">Sector privado organizado, sociedad civil, funcionarios técnicos</p>
+                      </div>
+
+                      <div class="bg-white p-4 rounded border-l-4 border-green-400">
+                        <h5 class="font-semibold mb-2">Diseño Institucional</h5>
+                        <p class="text-sm">Protección reformadores de resistencias burocracias establecidas</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-primary mb-4">Ventanas de Oportunidad</h4>
+                    <div class="space-y-4">
+                      <div class="bg-white p-4 rounded border-l-4 border-orange-400">
+                        <h5 class="font-semibold mb-2">Contexto Post-Pandemia</h5>
+                        <p class="text-sm">Presión fiscal y necesidad eficiencia generan apertura para reformas</p>
+                      </div>
+
+                      <div class="bg-white p-4 rounded border-l-4 border-cyan-400">
+                        <h5 class="font-semibold mb-2">Digitalización Acelerada</h5>
+                        <p class="text-sm">Aceptación modalidades remotas y transformaciones estructurales</p>
+                      </div>
+
+                      <div class="bg-white p-4 rounded border-l-4 border-pink-400">
+                        <h5 class="font-semibold mb-2">Presión Organizada</h5>
+                        <p class="text-sm">Demanda sistemática simplificación con propuestas técnicas concretas</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg">
+                  <h4 class="font-bold text-primary mb-4">Recomendaciones Estratégicas</h4>
+                  <div class="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                      <h5 class="font-semibold mb-3">Corto Plazo (1-2 años)</h5>
+                      <ul class="space-y-1">
+                        <li>• Establecer unidad medición costos burocráticos</li>
+                        <li>• Implementar time release studies piloto</li>
+                        <li>• Simplificar trámites inicio operaciones críticos</li>
+                        <li>• Fortalecer interoperabilidad sistemas existentes</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="font-semibold mb-3">Mediano Plazo (3-5 años)</h5>
+                      <ul class="space-y-1">
+                        <li>• Replicar modelo SUMA/VUCE en otros sectores</li>
+                        <li>• Implementar ventanilla única integral</li>
+                        <li>• Establecer sistema evaluación impacto regulatorio</li>
+                        <li>• Crear cultura de evidencia en administración pública</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <footer class="bg-primary text-white py-12 mt-12">
         <div class="container mx-auto px-6 max-w-6xl">
-          <div class="grid md:grid-cols-3 gap-8 text-sm opacity-80">
+          <div class="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 class="font-bold text-white text-base mb-4 border-b border-gray-600 pb-2">Fuentes</h3>
-              <ul class="space-y-2">
-                  <li>Banco Mundial Doing Business</li>
-                  <li>BID y CEPAL</li>
-                  <li>Índice de Burocracia Iberoamericano</li>
-              </ul>
+              <h3 class="text-lg font-bold mb-4 border-b border-gray-600 pb-2">Fuentes Principales</h3>
+              <div class="text-sm space-y-2 opacity-80">
+                <div>Banco Mundial Doing Business</div>
+                <div>BID y CEPAL</div>
+                <div>Índice de Burocracia Iberoamericano</div>
+                <div>Think Tanks locales (CEDLA, CEPB)</div>
+              </div>
             </div>
             <div>
-              <h3 class="font-bold text-white text-base mb-4 border-b border-gray-600 pb-2">Metodología</h3>
-              <p>Análisis documental, benchmarking regional y estimaciones basadas en modelos estándar.</p>
+              <h3 class="text-lg font-bold mb-4 border-b border-gray-600 pb-2">Metodología</h3>
+              <div class="text-sm space-y-2 opacity-80">
+                <div>Análisis documental exhaustivo</div>
+                <div>Comparación regional sistemática</div>
+                <div>Estimaciones basadas en benchmarks</div>
+                <div>Revisión crítica de fuentes</div>
+              </div>
             </div>
             <div>
-              <h3 class="font-bold text-white text-base mb-4 border-b border-gray-600 pb-2">Sobre el Estudio</h3>
-              <p>Análisis del costo del gasto público en trabas administrativas en Bolivia (2000-2023).</p>
+              <h3 class="text-lg font-bold mb-4 border-b border-gray-600 pb-2">Nota Metodológica</h3>
+              <div class="text-sm opacity-80">
+                <p>Todas las estimaciones monetarias se basan en datos oficiales y proyecciones conservadoras. La falta de información sistemática en Bolivia requiere inferencias metodológicas cuidadosas y comparaciones regionales.</p>
+              </div>
             </div>
           </div>
-          <div class="text-center mt-12 pt-8 border-t border-gray-700 opacity-60 text-xs">
-              &copy; 2023 Análisis Económico Bolivia. Todos los derechos reservados.
+
+          <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+            <div class="text-sm opacity-60">
+              <p>Análisis del costo del gasto público en trabas administrativas en Bolivia (2000-2023)</p>
+              <p>Estudio basado en fuentes internacionales y locales verificables</p>
+            </div>
           </div>
         </div>
       </footer>
@@ -653,7 +1625,7 @@
             if(window.innerWidth >= 1024) {
                 mainContent.classList.toggle('shifted', isOpen);
             } else {
-                // En móvil oscurecer el fondo podría ser una mejora adicional futura
+                // En móvil no desplazamos el contenido, el menú flota encima
                 mainContent.classList.remove('shifted');
             }
             
@@ -681,53 +1653,3 @@
         // Cerrar menú al hacer click fuera en móvil
         document.addEventListener('click', function(event) {
             const isClickInsideToc = tocNav.contains(event.target);
-            const isClickOnToggle = tocToggle.contains(event.target);
-            
-            if (window.innerWidth < 1024 && !isClickInsideToc && !isClickOnToggle && tocNav.classList.contains('toc-open')) {
-                toggleToc();
-            }
-        });
-
-        // Smooth scrolling mejorado
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    // Cerrar menú en móvil al navegar
-                    if (window.innerWidth < 1024 && tocNav.classList.contains('toc-open')) {
-                        toggleToc();
-                    }
-                    
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer para Animaciones al Scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Opcional: dejar de observar si solo queremos animar una vez
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-
-</body>
-</html>
